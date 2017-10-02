@@ -1,27 +1,32 @@
 package com.thehit.domain;
 
-import com.thehit.interfaces.Singer;
+import com.thehit.interfaces.Songwriter;
+import com.thehit.domain.Song;
 
-public class SingerImpl implements Singer{
-
+public class SongwriterImpl implements Songwriter{
+	
 	private String firstName;
 	private String lastName;
 	private String age;
 	private Song song;
 	
 	@Override
-	public void perform(Song song) {
+	public void compose(Song song) {
 		System.out.println("Composer " + firstName + 
 				" composed a song called " +song.getName() +
-				". This song has the following lyrics "+ song.getLyrics());
+				". This song has the following lyrics "+ song.getLyrics());    
 	}
 	
-	public SingerImpl() {
-		System.out.println("We are here in the default constructor");
+	public SongwriterImpl() {
+		System.out.println("We are here in the blank constructor");
 	}
 
-	public SingerImpl(String firstName, String lastName, 
+	public SongwriterImpl(String firstName, String lastName, 
 			String age, Song song) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.song= song;
 	}
 
 	public String getFirstName() {
@@ -57,5 +62,5 @@ public class SingerImpl implements Singer{
 	}
 	
 	
-	
+
 }
